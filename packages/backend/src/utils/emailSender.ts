@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendResetEmail = async (email: string, token: string): Promise<void> => {
-  const resetUrl = `http://localhost:${process.env.PGPORT}/reset-password?token=${token}`;
+  const resetUrl = `http://localhost:3000/reset-password?token=${token}`;
 
   const mailOptions = {
     from: `"LingoPrep" <${process.env.EMAIL_USER}>`,
@@ -29,8 +29,8 @@ export const sendVerificationCodeEmail = async (to: string, text: string): Promi
     port: Number(process.env.SMTP_PORT) || 587,
     secure: false,
     auth: {
-      user: process.env.Email_USER,
-      pass: process.env.Email_PASS,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
