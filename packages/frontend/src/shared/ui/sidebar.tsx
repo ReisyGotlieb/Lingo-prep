@@ -5,10 +5,9 @@ import { cn } from "../utils/cn";
 import { useSelector } from "react-redux";
 import React from "react";
 import { ReminderBell } from "./RemindersSidebar";
-import { RootState } from '../../shared/store/store';
+import { RootState } from "../../shared/store/store";
 
 const FaGraduationCap = FaIcons.FaGraduationCap as unknown as React.FC;
-
 
 interface NavItem {
   label: string;
@@ -30,10 +29,13 @@ const navItems: NavItem[] = [
   { label: "ניהול שאלות", href: "/manager/questions", adminOnly: true },
   { label: "ניהול משתמשים", href: "/manager/users", adminOnly: true },
   { label: "ניהול משאבים", href: "/manager/resources", adminOnly: true },
-  { label: "ניהול חומרים", href: "/manager/interview-materials", adminOnly: true, },
+  {
+    label: "ניהול חומרים",
+    href: "/manager/interview-materials",
+    adminOnly: true,
+  },
 
   { label: "ניהול הקלטות", href: "/auto-delete-config", adminOnly: true },
-
 ];
 
 const SidebarNavigation = () => {
